@@ -10,13 +10,16 @@ metstatfile=$basedir/results/method-statistics.csv
 
 for imfile in `ls $basedir/stimages/*.im`
 do
-	system=`basename $imgile .im`
+	system=`basename $imfile .im`
+	echo "analyzing... $system"
 
 	if cat $metstatfile | grep -q $system
 	then
 		echo $system is already analyzed
 	else
 		command="[|an| 
+				self halt.
+
 				Undeclared class superclass methodDictionary 
 					at: #purgeUnusedBindings 
 					put: (Undeclared class superclass methodDictionary at: #asString).
@@ -32,7 +35,7 @@ do
 				(Store.Bundle new name: 'Mircea-Experiments') mostRecentVersion loadSrc.
 
 				an := PolymorphismAnalyzer forModelNamed: '$system'. 
-				Snapshot new saveAs: '$stimdir/$system' thenQuit: true.
+				#Snapshot new saveAs: '$stimdir/$system' thenQuit: true.
 				an methodStatistics.
 			] 
 			on: Error do: [:e| '$msefile - error', e printString]."

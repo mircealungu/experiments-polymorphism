@@ -13,9 +13,11 @@ do
 	then
 		echo $system is already cached
 	else
+		echo system is ... $system 
 		command="[|an| 
+				self halt.
 				an := PolymorphismAnalyzer forFile: '$msefile'. 
-				Snapshot new saveAs: '$stimdir/$system' thenQuit: true.] 
+				Snapshot current saveAs: '$stimdir/$system' thenQuit: false.] 
 			on: Error do: [:e| '$msefile - error', e printString]."
 
 		$app $im -evaluate "$command"
