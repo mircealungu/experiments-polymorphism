@@ -15,9 +15,10 @@ do
 	else
 		echo system is ... $system 
 		command="[|an| 
-				self halt.
-				an := PolymorphismAnalyzer forFile: '$msefile'. 
-				Snapshot current saveAs: '$stimdir/$system' thenQuit: false.] 
+			an := PolymorphismAnalyzer forFile: '$msefile'. 
+			self halt.
+			Snapshot new saveAs: '$stimdir/$system' thenQuit: false.
+			] 
 			on: Error do: [:e| '$msefile - error', e printString]."
 
 		$app $im -evaluate "$command"
