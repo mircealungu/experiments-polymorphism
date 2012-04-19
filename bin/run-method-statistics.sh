@@ -5,8 +5,9 @@ basedir=`cd .. && pwd`
 app=$basedir/bin/PolyExp.app/Contents/MacOS/visual 
 im=$basedir/bin/PolyExp.app/Contents/Resources/resource.im
 stimdir=$basedir/stimages
-
 metstatfile=$basedir/results/method-statistics.csv
+complexity=$basedir/results/complexity.csv
+complexity=$basedir/results/impl-use.csv
 
 for imfile in `ls $basedir/stimages/*.im`
 do
@@ -31,12 +32,13 @@ do
 					tableOwner: 'BERN'; 
 					yourself). 
 				(Store.Bundle new name: 'Mircea-Experiments') mostRecentVersion loadSrc.
-
 				an := PolymorphismAnalyzer forModelNamed: '$system'. 
-				an methodStatistics.
+				an appendMethodStatisticsTo: '$metstatfile'
 			] 
 			on: Error do: [:e| '$msefile - error', e printString]."
 
+		echo evaluating...
+		echo $command
 		$app $imfile -evaluate "$command"
 	fi
 done
