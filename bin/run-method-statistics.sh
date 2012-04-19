@@ -6,8 +6,8 @@ app=$basedir/bin/PolyExp.app/Contents/MacOS/visual
 im=$basedir/bin/PolyExp.app/Contents/Resources/resource.im
 stimdir=$basedir/stimages
 metstatfile=$basedir/results/method-statistics.csv
-complexity=$basedir/results/complexity.csv
-complexity=$basedir/results/impl-use.csv
+complexityfile=$basedir/results/complexity.csv
+implusefile=$basedir/results/impl-use.csv
 
 for imfile in `ls $basedir/stimages/*.im`
 do
@@ -33,12 +33,15 @@ do
 					yourself). 
 				(Store.Bundle new name: 'Mircea-Experiments') mostRecentVersion loadSrc.
 				an := PolymorphismAnalyzer forModelNamed: '$system'. 
-				an appendMethodStatisticsTo: '$metstatfile'
+				an appendMethodStatisticsToFile: '$metstatfile'.
+				an appendComplexityResultsToFile: '$complexityfile'.
+				an appendImplUseResultsToFile: '$implusefile'.
+				
 			] 
 			on: Error do: [:e| '$msefile - error', e printString]."
 
 		echo evaluating...
-		echo $command
 		$app $imfile -evaluate "$command"
 	fi
 done
+
