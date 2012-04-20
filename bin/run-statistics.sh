@@ -5,9 +5,15 @@ basedir=`cd .. && pwd`
 app=$basedir/bin/PolyExp.app/Contents/MacOS/visual 
 im=$basedir/bin/PolyExp.app/Contents/Resources/resource.im
 stimdir=$basedir/stimages/$1
-metstatfile=$basedir/results/method-statistics-$1.csv
-complexityfile=$basedir/results/complexity-$1.csv
-implusefile=$basedir/results/impl-use-$1.csv
+metstatfile=$basedir/results/$1/loc-java.csv
+complexityfile=$basedir/results/$1/complexity-java.csv
+implusefile=$basedir/results/$1/impl-use-java.csv
+
+#create the dir for results if it does not exist already
+if [ -ne $basedir/results/$1 ]
+then
+	mkdir $basedir/results/$1
+fi
 
 for imfile in `ls $stimdir/*im`
 do
