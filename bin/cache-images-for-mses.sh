@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -eq 0 ] ; then
-    echo Usage: $0 <images-subfolder>
+    echo Usage: $0 images-subfolder
     exit 0
 fi
 
