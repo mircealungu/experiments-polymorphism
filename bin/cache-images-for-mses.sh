@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ $# -eq 0 ] ; then
+    echo Usage: $0 <images-subfolder>
+    exit 0
+fi
+
+
 basedir=`cd .. && pwd`
 app=$basedir/bin/PolyExp.app/Contents/MacOS/visual 
 im=$basedir/bin/PolyExp.app/Contents/Resources/resource.im
