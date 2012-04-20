@@ -10,8 +10,11 @@ complexityfile=$basedir/results/$1/complexity-java.csv
 implusefile=$basedir/results/$1/impl-use-java.csv
 
 #create the dir for results if it does not exist already
-if [ -ne $basedir/results/$1 ]
+if [ -e $basedir/results/$1 ]
 then
+	echo "results folder already exists"
+else
+	echo  "creating results folder $basedir/results/$1"
 	mkdir $basedir/results/$1
 fi
 

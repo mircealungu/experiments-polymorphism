@@ -16,7 +16,7 @@ do
 		echo system is ... $system 
 		command="[|an| 
 			an := PolymorphismAnalyzer forFile: '$msefile'. 
-			Snapshot new saveAs: '$stimdir/$1/$system' thenQuit: false.
+			Snapshot new saveAs: '$stimdir/$system' thenQuit: false.
 			] 
 			on: Error do: [:e| '$msefile - error', e printString]."
 
