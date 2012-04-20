@@ -4,7 +4,7 @@ echo running method statistics...
 basedir=`cd .. && pwd`
 app=$basedir/bin/PolyExp.app/Contents/MacOS/visual 
 im=$basedir/bin/PolyExp.app/Contents/Resources/resource.im
-stimdir=$basedir/stimages
+stimdir=$basedir/stimages/paparazzo
 
 for imfile in `ls $stimdir/*$1*`
 do
