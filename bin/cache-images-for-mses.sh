@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ $# -eq 0 ] ; then
+    echo Usage: $0 images-subfolder
+    exit 0
+fi
+
+
 basedir=`cd .. && pwd`
 app=$basedir/bin/PolyExp.app/Contents/MacOS/visual 
 im=$basedir/bin/PolyExp.app/Contents/Resources/resource.im
@@ -16,7 +22,7 @@ do
 		echo system is ... $system 
 		command="[|an| 
 			an := PolymorphismAnalyzer forFile: '$msefile'. 
-			Snapshot new saveAs: '$stimdir/$1/$system' thenQuit: false.
+			Snapshot new saveAs: '$stimdir/$system' thenQuit: false.
 			] 
 			on: Error do: [:e| '$msefile - error', e printString]."
 
