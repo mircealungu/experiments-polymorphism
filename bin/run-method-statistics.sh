@@ -4,12 +4,12 @@ echo running method statistics...
 basedir=`cd .. && pwd`
 app=$basedir/bin/PolyExp.app/Contents/MacOS/visual 
 im=$basedir/bin/PolyExp.app/Contents/Resources/resource.im
-stimdir=$basedir/stimages
-metstatfile=$basedir/results/method-statistics.csv
-complexityfile=$basedir/results/complexity.csv
-implusefile=$basedir/results/impl-use.csv
+stimdir=$basedir/stimages/paparazzo
+metstatfile=$basedir/results/method-statistics-pprz.csv
+complexityfile=$basedir/results/complexity-pprz.csv
+implusefile=$basedir/results/impl-use-pprz.csv
 
-for imfile in `ls $basedir/stimages/*.im`
+for imfile in `ls $stimdir/*im`
 do
 	system=`basename $imfile .im`
 	echo "analyzing... $system"
