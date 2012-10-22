@@ -13,7 +13,7 @@ TestCase subclass: #PolymorphismAnalyzerTest
 	instanceVariableNames: 'analyzer hotDrawAnalyzer jHotDrawAnalyzer jFreeChart '
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: ''!
+	category: 'PolyExp'!
 
 PolymorphismAnalyzerTest class
 	instanceVariableNames: ''!
@@ -22,7 +22,7 @@ OrderedCollection variableSubclass: #Hierarchy
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: ''!
+	category: 'PolyExp'!
 
 Hierarchy class
 	instanceVariableNames: ''!
@@ -34,7 +34,7 @@ OrderedCollection variableSubclass: #PolymorphicMethodChain
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: ''!
+	category: 'PolyExp'!
 
 PolymorphicMethodChain class
 	instanceVariableNames: ''!
@@ -46,7 +46,7 @@ Object subclass: #PolymorphismAnalyzer
 	instanceVariableNames: 'model polymorphicMessagesDict modelMethods rootPolymorphicMethods polymorphicMethods methodsCallingPolymorphicMethods polymorphicMethodSignatures allPolymorphicCalls '
 	classVariableNames: ''
 	poolDictionaries: 'SCG.Moose '
-	category: ''!
+	category: 'PolyExp'!
 
 PolymorphismAnalyzer class
 	instanceVariableNames: ''!
@@ -58,7 +58,7 @@ OrderedCollection variableSubclass: #PolymorphicChain
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: ''!
+	category: 'PolyExp'!
 
 PolymorphicChain class
 	instanceVariableNames: ''!
