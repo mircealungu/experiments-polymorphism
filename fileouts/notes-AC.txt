@@ -1,0 +1,54 @@
+A
+- B
+- C
+		
+		
+A a = B.new
+a.m
+// is clearly a poly call
+
+B b = B.new
+b.m	
+// is it a poly call ?? I filtered it out. 
+// RULE: discard if receiver = nil
+
+----------
+ receiver = nil 
+// it's happening ! It probably means that the parser was not able to go back to the actual receiver obj/class. 
+// RULE: ???
+
+EXAMPLES: 
+getOwner().restoreTransformTo(restoreData);
+view.getDrawing().fireUndoableEditHappened(new BezierNodeEdit(f, index, oldNode, f.getNode(index)));
+..
+
+----------
+
+A <Interface>
+- B
+- C
+// is poly hierarchy
+
+A <Interface>
+- B
+// is not poly hierarchy
+
+A <Interface>
+- B
+- - C
+// is poly hierarchy
+
+A <Interface>
+- B
+- - C 
+- - D
+// is poly hierarchy
+	
+// RULE: discard if hierarchy.height = 2 & root.type = interface	
+
+----------
+
+B.m
+
+// static calls are not poly
+// RULE: discard if receiver.type = class
