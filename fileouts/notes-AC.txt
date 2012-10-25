@@ -10,12 +10,13 @@ a.m
 B b = B.new
 b.m	
 // is it a poly call ?? I filtered it out. 
-// RULE: discard if receiver = nil
+// RULE: 
+// keep two versions of the metric. One where we discard if receiver class = candidate class; and one where we count both cases (old impl.)
 
 ----------
  receiver = nil 
-// it's happening ! It probably means that the parser was not able to go back to the actual receiver obj/class. 
-// RULE: ???
+// It probably means that the parser was not able to go back to the actual receiver obj/class. 
+// RULE: ignore. 
 
 EXAMPLES: 
 getOwner().restoreTransformTo(restoreData);
@@ -52,3 +53,15 @@ B.m
 
 // static calls are not poly
 // RULE: discard if receiver.type = class
+
+-----------
+
+overridingMethods
+
+	| overs |
+	overs := OrderedCollection new.
+	self belongsTo subclassHierarchyGroupModel 
+		do: [:cls | overs addAll: (cls methods select: [:met | met name = self name])].
+	^overs
+
+// RULE: compare the whole signature
