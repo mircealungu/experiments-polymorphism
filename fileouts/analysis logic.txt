@@ -1,0 +1,21 @@
+RESULT: 
+PolymorphismAnalyzer.modelMethods = all methods (stub excluded)
+PolymorphismAnalyzer.allPolyMethods 
+	-> polymorphicMethods_computer = rootPolyMethods + overriding 
+PolymorphismAnalyzer.rootPolyMethods =  rootPolyMethods
+PolymorphismAnalyzer.allHierarchies = allHierarchyRoots + subclasses
+PolymorphismAnalyzer.allHierarchies = .. 
+PolymorphismAnalyzer.polymorphicHierarchies = hierarchies that contain poly class
+MooseModel.allModelClasses = all classes
+PolymorphismAnalyzer.polymorphicClasses = polymorphicClasses
+PolymorphismAnalyzer.callSites_methods = caller of allPolymorphicCalls 
+PolymorphismAnalyzer.callSites_classes 
+PolymorphismAnalyzer.allPolymorphicCalls 
+	-> allPolymorphicCalls_computer = invocations to polyMethod; exclude calls to objects with same class as invoked method; exclude calls to static methods
+	-> allPolymorphicCalls_computer_old = invocations to polyMethod
+PolymorphismAnalyzer.allCalls = all method calls
+
+
+rootPolyMethods = methods that are overridden but not overriding; not part of interface 
+allHierarchyRoots = superclass is stub and has subClasses
+polymorphicClasses = classes that has a method in allPolyMethods 

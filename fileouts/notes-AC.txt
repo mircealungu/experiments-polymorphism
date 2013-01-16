@@ -9,7 +9,7 @@ a.m
 
 B b = B.new
 b.m	
-// is it a poly call ?? I filtered it out. 
+// is it a poly call ?? I filtered it out (allPolymorphicCalls_computer). 
 // RULE: 
 // keep two versions of the metric. One where we discard if receiver class = candidate class; and one where we count both cases (old impl.)
 
